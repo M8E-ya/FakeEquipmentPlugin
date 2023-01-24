@@ -19,8 +19,20 @@ public class FakeEquipmentPlugin extends JavaPlugin {
         new FakeEquipment(this) {
             @Override
             protected boolean onEquipmentSending(EquipmentSendingEvent equipmentEvent) {
-                if (equipmentEvent.getSlot() == EquipmentSlot.HELD) {
-                    equipmentEvent.setEquipment(new ItemStack(Material.DIAMOND));
+                if (equipmentEvent.getSlot() == EquipmentSlot.HELMET && equipmentEvent.getEquipment().getType() == Material.DIAMOND_HELMET) {
+                    equipmentEvent.setEquipment(new ItemStack(Material.LEATHER_HELMET));
+                    return true;
+                }
+                if (equipmentEvent.getSlot() == EquipmentSlot.CHESTPLATE && equipmentEvent.getEquipment().getType() == Material.DIAMOND_CHESTPLATE) {
+                    equipmentEvent.setEquipment(new ItemStack(Material.LEATHER_CHESTPLATE));
+                    return true;
+                }
+                if (equipmentEvent.getSlot() == EquipmentSlot.LEGGINGS && equipmentEvent.getEquipment().getType() == Material.DIAMOND_LEGGINGS) {
+                    equipmentEvent.setEquipment(new ItemStack(Material.LEATHER_LEGGINGS));
+                    return true;
+                }
+                if (equipmentEvent.getSlot() == EquipmentSlot.BOOTS && equipmentEvent.getEquipment().getType() == Material.DIAMOND_BOOTS) {
+                    equipmentEvent.setEquipment(new ItemStack(Material.LEATHER_BOOTS));
                     return true;
                 }
                 return false;
@@ -29,8 +41,17 @@ public class FakeEquipmentPlugin extends JavaPlugin {
             @Override
             protected void onEntitySpawn(Player client, LivingEntity visibleEntity) {
                 // Remember to change this if you're intercepting a different slot!
-                if (EquipmentSlot.HELD.isEmpty(visibleEntity)) {
-                    updateSlot(client, visibleEntity, EquipmentSlot.HELD);
+                if (EquipmentSlot.HELMET.isEmpty(visibleEntity)) {
+                    updateSlot(client, visibleEntity, EquipmentSlot.HELMET);
+                }
+                if (EquipmentSlot.CHESTPLATE.isEmpty(visibleEntity)) {
+                    updateSlot(client, visibleEntity, EquipmentSlot.CHESTPLATE);
+                }
+                if (EquipmentSlot.LEGGINGS.isEmpty(visibleEntity)) {
+                    updateSlot(client, visibleEntity, EquipmentSlot.LEGGINGS);
+                }
+                if (EquipmentSlot.BOOTS.isEmpty(visibleEntity)) {
+                    updateSlot(client, visibleEntity, EquipmentSlot.BOOTS);
                 }
             }
         };

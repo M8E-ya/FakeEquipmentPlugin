@@ -172,8 +172,7 @@ public abstract class FakeEquipment {
         this.plugin = plugin;
         this.manager = ProtocolLibrary.getProtocolManager();
 
-        manager.addPacketListener(
-                listener = new PacketAdapter(plugin, ENTITY_EQUIPMENT, NAMED_ENTITY_SPAWN) {
+        this.manager.addPacketListener(listener = new PacketAdapter(plugin, ENTITY_EQUIPMENT, NAMED_ENTITY_SPAWN) {
                     @Override
                     public void onPacketSending(PacketEvent event) {
                         PacketContainer packet = event.getPacket();
