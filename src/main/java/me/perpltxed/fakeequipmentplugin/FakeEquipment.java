@@ -1,6 +1,5 @@
 package me.perpltxed.fakeequipmentplugin;
 
-
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
@@ -34,10 +33,10 @@ public abstract class FakeEquipment {
     public enum EquipmentSlot {
         // http://wiki.vg/Protocol#Entity_Equipment_.280x05.29
         HELD(0),
-        BOOTS(2),
-        LEGGINGS(3),
-        CHESTPLATE(4),
-        HELMET(5);
+        BOOTS(1),
+        LEGGINGS(2),
+        CHESTPLATE(3),
+        HELMET(4);
 
         private int id;
 
@@ -52,7 +51,7 @@ public abstract class FakeEquipment {
          */
         public ItemStack getEquipment(LivingEntity entity) {
             switch (this) {
-                case HELD: return entity.getEquipment().getItemInMainHand();
+                case HELD: return entity.getEquipment().getItemInHand();
                 case BOOTS: return entity.getEquipment().getBoots();
                 case LEGGINGS: return entity.getEquipment().getLeggings();
                 case CHESTPLATE: return entity.getEquipment().getChestplate();

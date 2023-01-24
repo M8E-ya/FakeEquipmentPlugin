@@ -1,7 +1,7 @@
 name: FakeEquipmentPlugin
 version: '${project.version}'
 main: me.perpltxed.fakeequipmentplugin.FakeEquipmentPlugin
-api-version: 1.19
+api-version: 1.8
 depend: [ProtocolLib]
 
 
