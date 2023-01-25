@@ -77,7 +77,7 @@
             <artifactId>paper-api</artifactId>
             <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>system</scope>
-            <systemPath>C:/Users/surya/Downloads/paper-1.8.8-445.jar</systemPath>
+            <systemPath>/Downloads/paper-1.8.8-445.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.spigotmc</groupId>
